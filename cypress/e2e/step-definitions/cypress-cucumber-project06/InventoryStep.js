@@ -21,18 +21,20 @@ cy.wrap($el).should('contain', array[index])
   })
 });
 
+
 Then(/^the user should see the table with the rows below$/, (table) => {
-	const tableRows = table.rawTable
-	inventoryPage.getTableRows().each(($row, index){
-		tableRows[index].forEach((cell, i) => {
-			cy.wrap($row).find('td').eq(i).should('contain', cell.trim())
-		})
-	})
-});
+  const rowsTable = table.rawTable
+
+  inventoryPage.getTableRows().each(($row, index) => {
+    rowsTable[index].forEach((cell, i) => {
+      cy.wrap($row).find('td').eq(i).should('contain', cell.trim())
+    })
+  })
+})
 
 Then(/^the user should see the "([^"]*)" button is enabled$/, (label) => {
   inventoryPage.getButtonByLabel(label).should('be.enabled')
-}))
+})
 
 Then(/^the user should see the "([^"]*)" text displayed$/, (text) => {
   inventoryPage.getTotalAmount().should('have.text', text)

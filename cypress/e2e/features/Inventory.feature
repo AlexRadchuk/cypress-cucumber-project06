@@ -19,6 +19,7 @@ And the user should see the "ADD PRODUCT" button is enabled
 And the user should see the "Total = $2,300" text displayed
 
 Scenario: Test Case 02 - Validate the Add New Product modal
+
 When the user clicks on the "ADD PRODUCT" button
 Then the user should see the "Add New Product" modal with its heading
 And the user should see the "X" button is enabled
